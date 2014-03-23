@@ -29,7 +29,7 @@ Video.create(title: "Futurama", description: "Philip J Fry blah blah",
 Video.create(title: "Family Guy", description: "Seth McFarlane blah blah Canada sucks",
              small_cover_url: "/tmp/family_guy.jpg",
              large_cover_url: "/tmp/family_guy_large.jpg")
-Video.create(title: "Monk", description: "OCD detective shenanigans",
+monk = Video.create(title: "Monk", description: "OCD detective shenanigans",
              small_cover_url: "/tmp/monk.jpg",
              large_cover_url: "/tmp/monk_large.jpg",
              category_id: 1)
@@ -191,3 +191,8 @@ Video.create(title: "South Park", description: "Fourth grade political commentar
 Category.create(name: "TV Comedies")
 Category.create(name: "TV Dramas")
 Category.create(name: "Action Movies")
+
+daddy = User.create(full_name: "Daddy", password: "daddy", email: "daddy2@daddy.com")
+
+Review.create(user: daddy, video: monk, rating: 4, content: "This is just a test")
+Review.create(user: daddy, video: monk, rating: 1, content: "This is just a test also")
