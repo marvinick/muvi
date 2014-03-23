@@ -10,7 +10,7 @@ gem 'uglifier'
 gem 'jquery-rails'
 gem 'sprockets', '2.11.0'
 gem 'bootstrap_form'
-gem 'bcrypt-ruby', '~> 3.0.1'
+gem 'bcrypt-ruby', '~> 3.1.2'
 
 group :development do
   gem 'sqlite3'
