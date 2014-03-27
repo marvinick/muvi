@@ -11,8 +11,9 @@ describe QueueItemsController do
       expect(assigns(:queue_items)).to match_array([queue_item1, queue_item2])
     end
 
-    it_behaves_like "requires sign in" do
-      let(:action) { get :index }
+    it "redirects to the sign in page for unauthenticated users" do
+      get :index
+      expect(response).to redirect_to sign_in_path
     end
   end
 
