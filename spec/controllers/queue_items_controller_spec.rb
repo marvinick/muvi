@@ -11,9 +11,8 @@ describe QueueItemsController do
       expect(assigns(:queue_items)).to match_array([queue_item1, queue_item2])
     end
 
-    it "redirects to the sign in page for unauthenticated users" do
-      get :index
-      expect(response).to redirect_to sign_in_path
+    it_behaves_like "requires sign in" do
+      let(:action) { get :index }
     end
   end
 
@@ -63,9 +62,9 @@ describe QueueItemsController do
       expect(daddy.queue_items.count).to eq(1)
     end
 
-    it "redirects to the sign in page for unauthenticated users" do
-      post :create, video_id: 3
-      expect(response).to redirect_to sign_in_path
+
+    it_behaves_like "requires sign in" do # redirects to the sign in page for unauthenticated users
+      let(:action) { post :create, video_id: 3 }
     end
   end
 
@@ -101,9 +100,9 @@ describe QueueItemsController do
       delete :destroy, id: queue_item.id
       expect(QueueItem.count).to eq(1)
     end
-    it "redirects to the sign in page for unauthenticated users" do
-      delete :destroy, id: 3
-      expect(response).to redirect_to sign_in_path
+
+    it_behaves_like "requires sign in" do # redirects to the sign in page for unauthenticated users
+      let(:action) { delete :destroy, id: 3 }
     end
   end
 
