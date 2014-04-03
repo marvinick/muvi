@@ -27,4 +27,7 @@ Myflix::Application.routes.draw do
   get 'register', to: "users#new"
 
   get 'sign_out', to: 'sessions#destroy'
+
+  resources :password_resets, only: [:show, :create]
+  get 'expired_token', to: 'password_resets#expired_token'
 end
