@@ -1,0 +1,6 @@
+!!! 5
+%html(lang="en-US")
+  %body
+    %p You are invited to join the movement by #{@invitation.inviter.full_name}!
+    %p= @invitation.message
+    %p= link_to "I'd like to join", '#'
