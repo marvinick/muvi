@@ -43,4 +43,19 @@ describe User do
       expect(daddy.follows?(marvee)).to be_false
     end
   end
+
+  describe "#follow" do
+    it "follows another user" do
+      daddy = Fabricate(:user)
+      daddy_o = Fabricate(:user)
+      daddy.follow(daddy_o)
+      expect(daddy.follows?(daddy_o)).to be_true
+    end
+
+    it "does not follow one self" do
+      daddy = Fabricate(:user)
+      daddy.follow(daddy)
+      expect(daddy.follows?(daddy)).to be_false
+    end
+  end
 end

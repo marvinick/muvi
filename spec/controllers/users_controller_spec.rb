@@ -22,6 +22,27 @@ describe UsersController do
       it "redirects to the sign in page" do
         expect(response).to redirect_to sign_in_path
       end
+
+      it "makes the user follow the inviter" do
+        daddy = Fabricate(:user)
+        invitation = Fabricate(:invitation, inviter: daddy, recipient_email: 'daddy_o@daddy.com')
+        post :create, user: {email: 'daddy_o@daddy.com', password: "password", full_name: 'Daddy O'}, invitation_token: invitation.token
+        daddy_o = User.where(email: 'daddy_o@daddy.com').first
+        expect(daddy_o.follows?(daddy)).to be_true
+      end
+      it "makes the inviter follow the user" do
+        daddy = Fabricate(:user)
+        invitation = Fabricate(:invitation, inviter: daddy, recipient_email: 'daddy_o@daddy.com')
+        post :create, user: {email: 'daddy_o@daddy.com', password: "password", full_name: 'Daddy O'}, invitation_token: invitation.token
+        daddy_o = User.where(email: 'daddy_o@daddy.com').first
+        expect(daddy.follows?(daddy_o)).to be_true
+      end
+      it "expires the invitatin upon acceptance" do
+        daddy = Fabricate(:user)
+        invitation = Fabricate(:invitation, inviter: daddy, recipient_email: 'daddy_o@daddy.com')
+        post :create, user: {email: 'daddy_o@daddy.com', password: "password", full_name: 'Daddy O'}, invitation_token: invitation.token
+        expect(Invitation.first.token).to be_nil
+      end
     end
 
     context "with invalid input" do
