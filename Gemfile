@@ -15,7 +15,6 @@ gem 'fabrication'
 gem 'faker'
 
 group :development do
-  gem 'pg'
   gem 'pry'
   gem 'pry-nav'
   gem 'thin'
@@ -39,6 +38,5 @@ end
 group :production do
   gem 'rails_12factor'
   gem 'pg'
-  gem 'thin'
 end
 
