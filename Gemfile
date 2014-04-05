@@ -14,19 +14,20 @@ gem 'bcrypt-ruby', '3.0.1'
 gem 'fabrication'
 gem 'faker'
 
-
 group :development do
-  gem 'sqlite3'
+  gem 'pg'
   gem 'pry'
   gem 'pry-nav'
   gem 'thin'
   gem "better_errors"
   gem "binding_of_caller"
   gem 'letter_opener'
+  gem 'sqlite3'
 end
 
 group :development, :test do
   gem 'rspec-rails'
+   gem 'sqlite3'
 end
 
 group :test do
@@ -37,6 +38,7 @@ group :test do
 end
 
 group :production do
-
+  gem 'rails_12factor'
+  gem 'pg'
 end
 
