@@ -27,4 +27,6 @@ Myflix::Application.configure do
     :authentication => :plain,
   }
   ActionMailer::Base.delivery_method = :smtp
+
+  config.action_mailer.default_url_options = { host: 'arcane-crag-4986.herokuapp.com' }
 end
