@@ -13,6 +13,7 @@ gem 'bootstrap_form'
 gem 'bcrypt-ruby', '3.0.1'
 gem 'fabrication'
 gem 'faker'
+gem 'sidekiq'
 
 group :development do
   gem 'pry'
