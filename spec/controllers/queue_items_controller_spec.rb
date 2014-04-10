@@ -163,7 +163,7 @@ describe QueueItemsController do
         video = Fabricate(:video)
         queue_item1 = Fabricate(:queue_item, user: daddy, position: 1, video: video)
         queue_item2 = Fabricate(:queue_item, user: daddy, position: 2, video: video)
-        post :update_queue, queue_items: [{id: queue_item1.id, position: 2}, {id: queue_item2.id, position: 1.3}]
+        post :update_queue, queue_items: [{id: queue_item1.id, position: 2.5}, {id: queue_item2.id, position: 1.3}]
         expect(queue_item1.reload.position).to eq(1)
       end
     end
