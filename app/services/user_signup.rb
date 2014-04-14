@@ -13,6 +13,7 @@ class UserSignup
         :card => stripe_token
       )
       if customer.successful?
+        @user.customer_token = customer.customer_token
         @user.save
         invitation_handler(invitation_token)
         AppMailer.send_welcome_email(@user).deliver

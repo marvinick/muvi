@@ -1,0 +1,246 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.stripe.com/v1/tokens
+    body:
+      encoding: US-ASCII
+      string: card[number]=4242424242424242&card[exp_month]=4&card[exp_year]=2015&card[cvc]=314
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Stripe/v1 RubyBindings/1.11.0
+      Authorization:
+      - Bearer sk_test_qFwxOxnTSxsQmFrk3UUipiBf
+      Content-Type:
+      - application/x-www-form-urlencoded
+      X-Stripe-Client-User-Agent:
+      - '{"bindings_version":"1.11.0","lang":"ruby","lang_version":"2.0.0 p247 (2013-06-27)","platform":"x86_64-darwin13.0.0","publisher":"stripe","uname":"Darwin
+        mcair.local 13.0.0 Darwin Kernel Version 13.0.0: Thu Sep 19 22:22:27 PDT 2013;
+        root:xnu-2422.1.72~6/RELEASE_X86_64 x86_64"}'
+      Content-Length:
+      - '81'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Mon, 14 Apr 2014 18:17:49 GMT
+      Content-Type:
+      - application/json;charset=utf-8
+      Content-Length:
+      - '570'
+      Access-Control-Max-Age:
+      - '300'
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Methods:
+      - GET, POST, HEAD, OPTIONS, DELETE
+      Cache-Control:
+      - no-cache, no-store
+      Strict-Transport-Security:
+      - max-age=31556926; includeSubDomains
+    body:
+      encoding: UTF-8
+      string: |
+        {
+          "id": "tok_103qwX2cQjvRqDMdAb7WrYwA",
+          "livemode": false,
+          "created": 1397499468,
+          "used": false,
+          "object": "token",
+          "type": "card",
+          "card": {
+            "id": "card_103qwX2cQjvRqDMdSHnnU0NP",
+            "object": "card",
+            "last4": "4242",
+            "type": "Visa",
+            "exp_month": 4,
+            "exp_year": 2015,
+            "fingerprint": "3G2xcQ0kXYcONRa8",
+            "customer": null,
+            "country": "US",
+            "name": null,
+            "address_line1": null,
+            "address_line2": null,
+            "address_city": null,
+            "address_state": null,
+            "address_zip": null,
+            "address_country": null
+          }
+        }
+    http_version: 
+  recorded_at: Mon, 14 Apr 2014 18:17:49 GMT
+- request:
+    method: post
+    uri: https://api.stripe.com/v1/customers
+    body:
+      encoding: US-ASCII
+      string: card=tok_103qwX2cQjvRqDMdAb7WrYwA&email=vernie.dietrich%40brownharvey.info&plan=muvi
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Stripe/v1 RubyBindings/1.11.0
+      Authorization:
+      - Bearer sk_test_qFwxOxnTSxsQmFrk3UUipiBf
+      Content-Type:
+      - application/x-www-form-urlencoded
+      X-Stripe-Client-User-Agent:
+      - '{"bindings_version":"1.11.0","lang":"ruby","lang_version":"2.0.0 p247 (2013-06-27)","platform":"x86_64-darwin13.0.0","publisher":"stripe","uname":"Darwin
+        mcair.local 13.0.0 Darwin Kernel Version 13.0.0: Thu Sep 19 22:22:27 PDT 2013;
+        root:xnu-2422.1.72~6/RELEASE_X86_64 x86_64"}'
+      Content-Length:
+      - '84'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Mon, 14 Apr 2014 18:17:49 GMT
+      Content-Type:
+      - application/json;charset=utf-8
+      Content-Length:
+      - '2988'
+      Access-Control-Allow-Methods:
+      - GET, POST, HEAD, OPTIONS, DELETE
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Cache-Control:
+      - no-cache, no-store
+      Access-Control-Max-Age:
+      - '300'
+      Strict-Transport-Security:
+      - max-age=31556926; includeSubDomains
+    body:
+      encoding: UTF-8
+      string: |
+        {
+          "object": "customer",
+          "created": 1397499469,
+          "id": "cus_3qwXQSMG05mqQf",
+          "livemode": false,
+          "description": null,
+          "email": "vernie.dietrich@brownharvey.info",
+          "delinquent": false,
+          "metadata": {},
+          "subscriptions": {
+            "object": "list",
+            "total_count": 1,
+            "has_more": false,
+            "url": "/v1/customers/cus_3qwXQSMG05mqQf/subscriptions",
+            "data": [
+              {
+                "id": "sub_3qwXjZvoA12osw",
+                "plan": {
+                  "interval": "month",
+                  "name": "gold",
+                  "created": 1397485382,
+                  "amount": 999,
+                  "currency": "usd",
+                  "id": "muvi",
+                  "object": "plan",
+                  "livemode": false,
+                  "interval_count": 1,
+                  "trial_period_days": null,
+                  "metadata": {},
+                  "statement_description": null
+                },
+                "object": "subscription",
+                "start": 1397499469,
+                "status": "active",
+                "customer": "cus_3qwXQSMG05mqQf",
+                "cancel_at_period_end": false,
+                "current_period_start": 1397499469,
+                "current_period_end": 1400091469,
+                "ended_at": null,
+                "trial_start": null,
+                "trial_end": null,
+                "canceled_at": null,
+                "quantity": 1,
+                "application_fee_percent": null,
+                "discount": null
+              }
+            ],
+            "count": 1
+          },
+          "discount": null,
+          "account_balance": 0,
+          "currency": "usd",
+          "cards": {
+            "object": "list",
+            "total_count": 1,
+            "has_more": false,
+            "url": "/v1/customers/cus_3qwXQSMG05mqQf/cards",
+            "data": [
+              {
+                "id": "card_103qwX2cQjvRqDMdSHnnU0NP",
+                "object": "card",
+                "last4": "4242",
+                "type": "Visa",
+                "exp_month": 4,
+                "exp_year": 2015,
+                "fingerprint": "3G2xcQ0kXYcONRa8",
+                "customer": "cus_3qwXQSMG05mqQf",
+                "country": "US",
+                "name": null,
+                "address_line1": null,
+                "address_line2": null,
+                "address_city": null,
+                "address_state": null,
+                "address_zip": null,
+                "address_country": null,
+                "cvc_check": "pass",
+                "address_line1_check": null,
+                "address_zip_check": null
+              }
+            ],
+            "count": 1
+          },
+          "default_card": "card_103qwX2cQjvRqDMdSHnnU0NP",
+          "subscription": {
+            "id": "sub_3qwXjZvoA12osw",
+            "plan": {
+              "interval": "month",
+              "name": "gold",
+              "created": 1397485382,
+              "amount": 999,
+              "currency": "usd",
+              "id": "muvi",
+              "object": "plan",
+              "livemode": false,
+              "interval_count": 1,
+              "trial_period_days": null,
+              "metadata": {},
+              "statement_description": null
+            },
+            "object": "subscription",
+            "start": 1397499469,
+            "status": "active",
+            "customer": "cus_3qwXQSMG05mqQf",
+            "cancel_at_period_end": false,
+            "current_period_start": 1397499469,
+            "current_period_end": 1400091469,
+            "ended_at": null,
+            "trial_start": null,
+            "trial_end": null,
+            "canceled_at": null,
+            "quantity": 1,
+            "application_fee_percent": null,
+            "discount": null
+          }
+        }
+    http_version: 
+  recorded_at: Mon, 14 Apr 2014 18:17:50 GMT
+recorded_with: VCR 2.9.0
