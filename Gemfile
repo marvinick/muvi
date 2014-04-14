@@ -20,8 +20,6 @@ gem 'mini_magick'
 gem 'stripe'
 gem 'figaro'
 gem 'draper'
-gem 'newrelic_rpm'
-
 
 group :development do
   gem 'pry'
