@@ -1,0 +1,97 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.stripe.com/v1/charges
+    body:
+      encoding: US-ASCII
+      string: amount=999&currency=usd&card=tok_103pRx2cQjvRqDMdPcgLHyfy&description=cause%20you're%20a%20sucker%20daddy%40daddy.com
+    headers:
+      Accept:
+      - '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Stripe/v1 RubyBindings/1.10.1
+      Authorization:
+      - Bearer sk_test_qFwxOxnTSxsQmFrk3UUipiBf
+      Content-Type:
+      - application/x-www-form-urlencoded
+      X-Stripe-Client-User-Agent:
+      - '{"bindings_version":"1.10.1","lang":"ruby","lang_version":"2.0.0 p247 (2013-06-27)","platform":"x86_64-darwin13.0.0","publisher":"stripe","uname":"Darwin
+        mcair.local 13.0.0 Darwin Kernel Version 13.0.0: Thu Sep 19 22:22:27 PDT 2013;
+        root:xnu-2422.1.72~6/RELEASE_X86_64 x86_64"}'
+      Content-Length:
+      - '117'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Thu, 10 Apr 2014 18:37:42 GMT
+      Content-Type:
+      - application/json;charset=utf-8
+      Content-Length:
+      - '1035'
+      Cache-Control:
+      - no-cache, no-store
+      Access-Control-Max-Age:
+      - '300'
+      Access-Control-Allow-Methods:
+      - GET, POST, HEAD, OPTIONS, DELETE
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Strict-Transport-Security:
+      - max-age=31556926; includeSubDomains
+    body:
+      encoding: UTF-8
+      string: |
+        {
+          "id": "ch_103pRx2cQjvRqDMdEUeSthbH",
+          "object": "charge",
+          "created": 1397155062,
+          "livemode": false,
+          "paid": true,
+          "amount": 999,
+          "currency": "usd",
+          "refunded": false,
+          "card": {
+            "id": "card_103pRx2cQjvRqDMdawQz0xJi",
+            "object": "card",
+            "last4": "4242",
+            "type": "Visa",
+            "exp_month": 7,
+            "exp_year": 2015,
+            "fingerprint": "3G2xcQ0kXYcONRa8",
+            "customer": null,
+            "country": "US",
+            "name": null,
+            "address_line1": null,
+            "address_line2": null,
+            "address_city": null,
+            "address_state": null,
+            "address_zip": null,
+            "address_country": null,
+            "cvc_check": "pass",
+            "address_line1_check": null,
+            "address_zip_check": null
+          },
+          "captured": true,
+          "refunds": [],
+          "balance_transaction": "txn_103pRx2cQjvRqDMdTNqlz4RO",
+          "failure_message": null,
+          "failure_code": null,
+          "amount_refunded": 0,
+          "customer": null,
+          "invoice": null,
+          "description": "cause you're a sucker daddy@daddy.com",
+          "dispute": null,
+          "metadata": {},
+          "statement_description": null
+        }
+    http_version: 
+  recorded_at: Thu, 10 Apr 2014 18:37:42 GMT
+recorded_with: VCR 2.9.0
