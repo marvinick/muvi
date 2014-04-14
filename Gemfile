@@ -20,6 +20,7 @@ gem 'mini_magick'
 gem 'stripe'
 gem 'figaro'
 gem 'draper'
+gem 'psych'
 
 group :development do
   gem 'pry'
