@@ -15,15 +15,13 @@ gem 'fabrication'
 gem 'faker'
 gem 'sidekiq'
 gem 'unicorn'
-<<<<<<< HEAD
-=======
 gem 'carrierwave'
 gem 'mini_magick'
 gem 'stripe'
 gem 'figaro'
 gem 'draper'
 gem 'newrelic_rpm'
->>>>>>> 42c817946bb1cc4028eafee70d25c259615f9815
+
 
 group :development do
   gem 'pry'
