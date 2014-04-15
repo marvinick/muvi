@@ -8,17 +8,17 @@ http_interactions:
       string: card[number]=4000000000000002&card[exp_month]=4&card[exp_year]=2015&card[cvc]=314
     headers:
       Accept:
-      - '*/*; q=0.5, application/xml'
+      - "*/*; q=0.5, application/xml"
       Accept-Encoding:
       - gzip, deflate
       User-Agent:
-      - Stripe/v1 RubyBindings/1.10.1
+      - Stripe/v1 RubyBindings/1.11.0
       Authorization:
       - Bearer sk_test_qFwxOxnTSxsQmFrk3UUipiBf
       Content-Type:
       - application/x-www-form-urlencoded
       X-Stripe-Client-User-Agent:
-      - '{"bindings_version":"1.10.1","lang":"ruby","lang_version":"2.0.0 p247 (2013-06-27)","platform":"x86_64-darwin13.0.0","publisher":"stripe","uname":"Darwin
+      - '{"bindings_version":"1.11.0","lang":"ruby","lang_version":"2.0.0 p247 (2013-06-27)","platform":"x86_64-darwin13.0.0","publisher":"stripe","uname":"Darwin
         mcair.local 13.0.0 Darwin Kernel Version 13.0.0: Thu Sep 19 22:22:27 PDT 2013;
         root:xnu-2422.1.72~6/RELEASE_X86_64 x86_64"}'
       Content-Length:
@@ -31,17 +31,17 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Thu, 10 Apr 2014 15:39:25 GMT
+      - Tue, 15 Apr 2014 04:23:03 GMT
       Content-Type:
       - application/json;charset=utf-8
       Content-Length:
       - '570'
+      Access-Control-Max-Age:
+      - '300'
       Access-Control-Allow-Credentials:
       - 'true'
       Access-Control-Allow-Methods:
       - GET, POST, HEAD, OPTIONS, DELETE
-      Access-Control-Max-Age:
-      - '300'
       Cache-Control:
       - no-cache, no-store
       Strict-Transport-Security:
@@ -50,14 +50,14 @@ http_interactions:
       encoding: UTF-8
       string: |
         {
-          "id": "tok_103pP52cQjvRqDMdbq0TkuX4",
+          "id": "tok_103r6I2cQjvRqDMdVYYe6p4y",
           "livemode": false,
-          "created": 1397144365,
+          "created": 1397535783,
           "used": false,
           "object": "token",
           "type": "card",
           "card": {
-            "id": "card_103pP52cQjvRqDMdO7UfScwY",
+            "id": "card_103r6I2cQjvRqDMdBkiqt9s0",
             "object": "card",
             "last4": "0002",
             "type": "Visa",
@@ -76,26 +76,26 @@ http_interactions:
           }
         }
     http_version: 
-  recorded_at: Thu, 10 Apr 2014 15:39:25 GMT
+  recorded_at: Tue, 15 Apr 2014 04:23:03 GMT
 - request:
     method: post
     uri: https://api.stripe.com/v1/charges
     body:
       encoding: US-ASCII
-      string: amount=999&currency=usd&card=tok_103pP52cQjvRqDMdbq0TkuX4&description=a%20invalid%20charge
+      string: amount=999&currency=usd&card=tok_103r6I2cQjvRqDMdVYYe6p4y&description=a%20invalid%20charge
     headers:
       Accept:
-      - '*/*; q=0.5, application/xml'
+      - "*/*; q=0.5, application/xml"
       Accept-Encoding:
       - gzip, deflate
       User-Agent:
-      - Stripe/v1 RubyBindings/1.10.1
+      - Stripe/v1 RubyBindings/1.11.0
       Authorization:
       - Bearer sk_test_qFwxOxnTSxsQmFrk3UUipiBf
       Content-Type:
       - application/x-www-form-urlencoded
       X-Stripe-Client-User-Agent:
-      - '{"bindings_version":"1.10.1","lang":"ruby","lang_version":"2.0.0 p247 (2013-06-27)","platform":"x86_64-darwin13.0.0","publisher":"stripe","uname":"Darwin
+      - '{"bindings_version":"1.11.0","lang":"ruby","lang_version":"2.0.0 p247 (2013-06-27)","platform":"x86_64-darwin13.0.0","publisher":"stripe","uname":"Darwin
         mcair.local 13.0.0 Darwin Kernel Version 13.0.0: Thu Sep 19 22:22:27 PDT 2013;
         root:xnu-2422.1.72~6/RELEASE_X86_64 x86_64"}'
       Content-Length:
@@ -108,17 +108,17 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Thu, 10 Apr 2014 15:39:25 GMT
+      - Tue, 15 Apr 2014 04:23:03 GMT
       Content-Type:
       - application/json;charset=utf-8
       Content-Length:
       - '162'
+      Access-Control-Max-Age:
+      - '300'
       Access-Control-Allow-Credentials:
       - 'true'
       Access-Control-Allow-Methods:
       - GET, POST, HEAD, OPTIONS, DELETE
-      Access-Control-Max-Age:
-      - '300'
       Cache-Control:
       - no-cache, no-store
       Strict-Transport-Security:
@@ -131,9 +131,9 @@ http_interactions:
             "message": "Your card was declined.",
             "type": "card_error",
             "code": "card_declined",
-            "charge": "ch_103pP52cQjvRqDMdHL1LSpqu"
+            "charge": "ch_103r6I2cQjvRqDMdaaeTM4hM"
           }
         }
     http_version: 
-  recorded_at: Thu, 10 Apr 2014 15:39:25 GMT
+  recorded_at: Tue, 15 Apr 2014 04:23:03 GMT
 recorded_with: VCR 2.9.0

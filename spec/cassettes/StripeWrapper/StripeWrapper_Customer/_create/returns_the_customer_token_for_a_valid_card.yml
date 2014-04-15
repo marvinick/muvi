@@ -2,10 +2,10 @@
 http_interactions:
 - request:
     method: post
-    uri: https://api.stripe.com/v1/customers
+    uri: https://api.stripe.com/v1/tokens
     body:
       encoding: US-ASCII
-      string: card=tok_103r6J2cQjvRqDMdUvKakUq7&email=daddy%40daddy.com&plan=muvi
+      string: card[number]=4242424242424242&card[exp_month]=4&card[exp_year]=2015&card[cvc]=314
     headers:
       Accept:
       - "*/*; q=0.5, application/xml"
@@ -22,7 +22,7 @@ http_interactions:
         mcair.local 13.0.0 Darwin Kernel Version 13.0.0: Thu Sep 19 22:22:27 PDT 2013;
         root:xnu-2422.1.72~6/RELEASE_X86_64 x86_64"}'
       Content-Length:
-      - '67'
+      - '81'
   response:
     status:
       code: 200
@@ -31,19 +31,96 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Tue, 15 Apr 2014 04:23:40 GMT
+      - Tue, 15 Apr 2014 04:23:09 GMT
       Content-Type:
       - application/json;charset=utf-8
       Content-Length:
-      - '2971'
-      Access-Control-Max-Age:
-      - '300'
-      Access-Control-Allow-Credentials:
-      - 'true'
-      Access-Control-Allow-Methods:
-      - GET, POST, HEAD, OPTIONS, DELETE
+      - '570'
       Cache-Control:
       - no-cache, no-store
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Max-Age:
+      - '300'
+      Access-Control-Allow-Methods:
+      - GET, POST, HEAD, OPTIONS, DELETE
+      Strict-Transport-Security:
+      - max-age=31556926; includeSubDomains
+    body:
+      encoding: UTF-8
+      string: |
+        {
+          "id": "tok_103r6I2cQjvRqDMdRmXBhr4o",
+          "livemode": false,
+          "created": 1397535789,
+          "used": false,
+          "object": "token",
+          "type": "card",
+          "card": {
+            "id": "card_103r6I2cQjvRqDMdZpuvTAuC",
+            "object": "card",
+            "last4": "4242",
+            "type": "Visa",
+            "exp_month": 4,
+            "exp_year": 2015,
+            "fingerprint": "3G2xcQ0kXYcONRa8",
+            "customer": null,
+            "country": "US",
+            "name": null,
+            "address_line1": null,
+            "address_line2": null,
+            "address_city": null,
+            "address_state": null,
+            "address_zip": null,
+            "address_country": null
+          }
+        }
+    http_version: 
+  recorded_at: Tue, 15 Apr 2014 04:23:09 GMT
+- request:
+    method: post
+    uri: https://api.stripe.com/v1/customers
+    body:
+      encoding: US-ASCII
+      string: card=tok_103r6I2cQjvRqDMdRmXBhr4o&email=finn.stokes%40weimann.name&plan=muvi
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Stripe/v1 RubyBindings/1.11.0
+      Authorization:
+      - Bearer sk_test_qFwxOxnTSxsQmFrk3UUipiBf
+      Content-Type:
+      - application/x-www-form-urlencoded
+      X-Stripe-Client-User-Agent:
+      - '{"bindings_version":"1.11.0","lang":"ruby","lang_version":"2.0.0 p247 (2013-06-27)","platform":"x86_64-darwin13.0.0","publisher":"stripe","uname":"Darwin
+        mcair.local 13.0.0 Darwin Kernel Version 13.0.0: Thu Sep 19 22:22:27 PDT 2013;
+        root:xnu-2422.1.72~6/RELEASE_X86_64 x86_64"}'
+      Content-Length:
+      - '76'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Tue, 15 Apr 2014 04:23:10 GMT
+      Content-Type:
+      - application/json;charset=utf-8
+      Content-Length:
+      - '2980'
+      Cache-Control:
+      - no-cache, no-store
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Max-Age:
+      - '300'
+      Access-Control-Allow-Methods:
+      - GET, POST, HEAD, OPTIONS, DELETE
       Strict-Transport-Security:
       - max-age=31556926; includeSubDomains
     body:
@@ -51,21 +128,21 @@ http_interactions:
       string: |
         {
           "object": "customer",
-          "created": 1397535819,
-          "id": "cus_3r6JqvWf30AIE6",
+          "created": 1397535789,
+          "id": "cus_3r6Iy5UWcDsRfV",
           "livemode": false,
           "description": null,
-          "email": "daddy@daddy.com",
+          "email": "finn.stokes@weimann.name",
           "delinquent": false,
           "metadata": {},
           "subscriptions": {
             "object": "list",
             "total_count": 1,
             "has_more": false,
-            "url": "/v1/customers/cus_3r6JqvWf30AIE6/subscriptions",
+            "url": "/v1/customers/cus_3r6Iy5UWcDsRfV/subscriptions",
             "data": [
               {
-                "id": "sub_3r6Jn51JbYMI0a",
+                "id": "sub_3r6IDy032EQLYi",
                 "plan": {
                   "interval": "month",
                   "name": "gold",
@@ -81,12 +158,12 @@ http_interactions:
                   "statement_description": null
                 },
                 "object": "subscription",
-                "start": 1397535819,
+                "start": 1397535789,
                 "status": "active",
-                "customer": "cus_3r6JqvWf30AIE6",
+                "customer": "cus_3r6Iy5UWcDsRfV",
                 "cancel_at_period_end": false,
-                "current_period_start": 1397535819,
-                "current_period_end": 1400127819,
+                "current_period_start": 1397535789,
+                "current_period_end": 1400127789,
                 "ended_at": null,
                 "trial_start": null,
                 "trial_end": null,
@@ -105,17 +182,17 @@ http_interactions:
             "object": "list",
             "total_count": 1,
             "has_more": false,
-            "url": "/v1/customers/cus_3r6JqvWf30AIE6/cards",
+            "url": "/v1/customers/cus_3r6Iy5UWcDsRfV/cards",
             "data": [
               {
-                "id": "card_103r6J2cQjvRqDMdDUbzcAP6",
+                "id": "card_103r6I2cQjvRqDMdZpuvTAuC",
                 "object": "card",
                 "last4": "4242",
                 "type": "Visa",
-                "exp_month": 7,
+                "exp_month": 4,
                 "exp_year": 2015,
                 "fingerprint": "3G2xcQ0kXYcONRa8",
-                "customer": "cus_3r6JqvWf30AIE6",
+                "customer": "cus_3r6Iy5UWcDsRfV",
                 "country": "US",
                 "name": null,
                 "address_line1": null,
@@ -131,9 +208,9 @@ http_interactions:
             ],
             "count": 1
           },
-          "default_card": "card_103r6J2cQjvRqDMdDUbzcAP6",
+          "default_card": "card_103r6I2cQjvRqDMdZpuvTAuC",
           "subscription": {
-            "id": "sub_3r6Jn51JbYMI0a",
+            "id": "sub_3r6IDy032EQLYi",
             "plan": {
               "interval": "month",
               "name": "gold",
@@ -149,12 +226,12 @@ http_interactions:
               "statement_description": null
             },
             "object": "subscription",
-            "start": 1397535819,
+            "start": 1397535789,
             "status": "active",
-            "customer": "cus_3r6JqvWf30AIE6",
+            "customer": "cus_3r6Iy5UWcDsRfV",
             "cancel_at_period_end": false,
-            "current_period_start": 1397535819,
-            "current_period_end": 1400127819,
+            "current_period_start": 1397535789,
+            "current_period_end": 1400127789,
             "ended_at": null,
             "trial_start": null,
             "trial_end": null,
@@ -165,5 +242,5 @@ http_interactions:
           }
         }
     http_version: 
-  recorded_at: Tue, 15 Apr 2014 04:23:40 GMT
+  recorded_at: Tue, 15 Apr 2014 04:23:10 GMT
 recorded_with: VCR 2.9.0

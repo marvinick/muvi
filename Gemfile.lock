@@ -124,6 +124,7 @@ GEM
       slop (~> 3.4)
     pry-nav (0.2.3)
       pry (~> 0.9.10)
+    psych (2.0.5)
     rack (1.5.2)
     rack-test (0.6.2)
       rack (>= 1.0)
@@ -201,6 +202,9 @@ GEM
       json (~> 1.8.1)
       mime-types (~> 1.25)
       rest-client (~> 1.4)
+    stripe_event (1.1.0)
+      activesupport (>= 3.1)
+      stripe (~> 1.6)
     subexec (0.2.3)
     thin (1.6.2)
       daemons (>= 1.0.9)
@@ -255,6 +259,7 @@ DEPENDENCIES
   pg
   pry
   pry-nav
+  psych
   rails (= 4.0.0)
   rails_12factor
   rspec-rails
@@ -265,6 +270,7 @@ DEPENDENCIES
   sprockets (= 2.11.0)
   sqlite3
   stripe
+  stripe_event
   thin
   uglifier
   unicorn
